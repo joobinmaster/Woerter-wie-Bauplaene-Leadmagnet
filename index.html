@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wörter wie Baupläne | Joobin Khavand</title>
+<meta name="description" content="Die 43 Baumsysteme deiner Sprache. Lade dir die kostenlose Leseprobe mit vier Wörtern, die du anders hören wirst.">
+<!-- Bunny Fonts — DSGVO-konform, EU-Server, kein IP-Logging an Google -->
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css?family=cormorant-garamond:300,400,500,600,300i,400i|jetbrains-mono:300,400,500|inter:300,400,500,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-deep: #050D17;
+  --navy: #0A1929;
+  --navy-elevated: #11253E;
+  --gold-bright: #E5C682;
+  --gold: #C9A063;
+  --gold-warm: #B0884F;
+  --gold-deep: #7E5F33;
+  --gold-faint: rgba(201, 160, 99, 0.20);
+  --gold-glow: rgba(229, 198, 130, 0.45);
+  --text-primary: #F5EFE0;
+  --text-secondary: #C9C0AE;
+  --text-muted: #7E7866;
+  --divider: rgba(201, 160, 99, 0.14);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Courier New', monospace;
+  --font-ui: 'Inter', sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; }
+html { -webkit-text-size-adjust: 100%; overflow: hidden; }
+body {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+::selection { background: var(--gold-faint); color: var(--text-primary); }
+
+/* ============================================
+   Hero — split layout: text left, video right
+   ============================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  isolation: isolate;
+  background: var(--navy);
+}
+
+.hero__left {
+  position: relative;
+  z-index: 5;
+  padding: 64px clamp(40px, 5vw, 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 80%, transparent 100%);
+}
+
+.hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.hero__date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border: 1px solid var(--divider);
+  border-radius: 100px;
+}
+
+.hero__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  max-width: 580px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(13px, 1.2vw, 16px);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--gold-bright);
+  text-shadow: 0 0 50px var(--gold-glow), 0 2px 0 rgba(0,0,0,0.4);
+  margin-bottom: 18px;
+}
+
+.hero__rule {
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--gold);
+  margin: 14px 0 22px;
+  position: relative;
+}
+.hero__rule::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 7px; height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.hero__sub {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  margin-bottom: 44px;
+}
+
+.hero__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.3vw, 2.1rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.hero__tagline em { color: var(--gold-bright); font-style: italic; }
+
+.hero__cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 40px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy-deep);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out);
+  text-decoration: none;
+}
+.btn:hover {
+  background: var(--gold-bright);
+  color: var(--navy-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px var(--gold-glow);
+}
+
+.hero__caption {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   Signup form — MailerLite integration
+   ============================================ */
+.signup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 460px;
+}
+
+/* Wrapper providing the rotating gold-glow border around the input */
+.signup__field {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.signup__field-glow {
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.signup__field-glow::before {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transition: transform 2s ease-out;
+  pointer-events: none;
+}
+
+/* Layer 1: outer wide halo — soft gold halation around the input */
+.signup__field-glow--halo {
+  inset: -3px;
+  filter: blur(4px);
+}
+.signup__field-glow--halo::before {
+  background: conic-gradient(
+    transparent 0%,
+    var(--gold) 5%,
+    transparent 38%,
+    transparent 50%,
+    var(--gold-bright) 60%,
+    transparent 87%
+  );
+}
+
+/* Layer 2: inner crisp rim — defines the lit edge of the field */
+.signup__field-glow--rim {
+  inset: -1px;
+  filter: blur(0.5px);
+}
+.signup__field-glow--rim::before {
+  background: conic-gradient(
+    var(--navy-deep) 0%,
+    var(--gold-bright) 5%,
+    var(--navy-deep) 14%,
+    var(--navy-deep) 50%,
+    var(--gold) 60%,
+    var(--navy-deep) 70%
+  );
+  filter: brightness(1.35);
+  transform: translate(-50%, -50%) rotate(70deg);
+}
+
+/* Hover — gradient swirls counter-clockwise (2s) */
+.signup__field:hover .signup__field-glow--halo::before {
+  transform: translate(-50%, -50%) rotate(-120deg);
+}
+.signup__field:hover .signup__field-glow--rim::before {
+  transform: translate(-50%, -50%) rotate(-110deg);
+}
+
+/* Focus — large clockwise spin (4s) */
+.signup__field:focus-within .signup__field-glow--halo::before {
+  transform: translate(-50%, -50%) rotate(420deg);
+  transition-duration: 4s;
+}
+.signup__field:focus-within .signup__field-glow--rim::before {
+  transform: translate(-50%, -50%) rotate(442deg);
+  transition-duration: 4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signup__field-glow::before { transition: none !important; }
+}
+
+.signup__input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  /* Solid navy → glow stays purely on the outer rim, never bleeds inside */
+  background: var(--navy-deep);
+  border: 1px solid transparent;
+  color: var(--text-primary);
+  padding: 18px 22px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  border-radius: inherit;
+}
+.signup__input::placeholder { color: var(--text-muted); }
+.signup__input:focus { outline: none; }
+
+.signup__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #d4d4d8;
+}
+
+.signup__checkbox {
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 1px solid var(--gold);
+  background: rgba(10, 25, 41, 0.55);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+.signup__checkbox:hover { border-color: var(--gold-bright); }
+.signup__checkbox:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.signup__checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid var(--navy-deep);
+  border-bottom: 2px solid var(--navy-deep);
+  transform: rotate(45deg);
+}
+.signup__consent-text { flex: 1; }
+
+.signup__button {
+  align-self: flex-start;
+  margin-top: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.signup__button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.signup__status {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-muted);
+  min-height: 16px;
+}
+.signup__status--error { color: #E27D60; }
+
+/* ============================================
+   Modal — confirmation popup after signup
+   Cream-white panel over a dark navy overlay
+   ============================================ */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  pointer-events: none;
+}
+.modal[hidden] { display: none; }
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 31, 61, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  background: #FAF3E0;
+  border: 1px solid #C9A961;
+  border-radius: 8px;
+  padding: clamp(40px, 5vw, 60px);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(201, 169, 97, 0.15);
+  pointer-events: auto;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal.is-open .modal__overlay { opacity: 1; }
+.modal.is-open .modal__panel { opacity: 1; transform: scale(1); }
+
+.modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  padding: 0;
+  border-radius: 50%;
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+}
+.modal__close:hover { color: #2A2A2A; background: rgba(10, 31, 61, 0.06); }
+.modal__close:focus-visible {
+  outline: 2px solid #C9A961;
+  outline-offset: 2px;
+}
+.modal__close svg { width: 14px; height: 14px; }
+
+.modal__accent {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: #C9A961;
+  margin-bottom: 26px;
+  position: relative;
+}
+.modal__accent::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: #C9A961;
+  border-radius: 50%;
+}
+
+.modal__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  letter-spacing: 0.005em;
+  line-height: 1.15;
+  color: #0A1F3D;
+  margin-bottom: 22px;
+}
+
+.modal__body {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.65;
+  color: #2A2A2A;
+}
+.modal__body p { margin-bottom: 14px; }
+.modal__body p:last-child { margin-bottom: 0; }
+
+.modal__signoff {
+  margin-top: 22px !important;
+  font-size: 17px;
+}
+.modal__signoff em {
+  font-style: italic;
+  color: #0A1F3D;
+  font-size: 1.15em;
+}
+
+body.modal-open { overflow: hidden; }
+
+@media (max-width: 600px) {
+  .modal { padding: 16px; }
+  .modal__panel { padding: 36px 28px; }
+  .modal__close { top: 10px; right: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal__overlay, .modal__panel { transition: none !important; }
+  .modal.is-open .modal__panel { transform: none; }
+}
+
+.hero__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-top: 1px solid var(--divider);
+  padding-top: 18px;
+  margin-top: 32px;
+}
+
+.hero__foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.hero__foot-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.18em;
+  transition: color 0.3s var(--ease-out);
+}
+.hero__foot-links a:hover { color: var(--gold-bright); }
+.hero__foot-sep { color: var(--divider); }
+
+.hero__foot-copy {
+  white-space: nowrap;
+  letter-spacing: 0.18em;
+}
+
+/* RIGHT — rotating tree video */
+.hero__right {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(ellipse at 50% 50%, var(--navy-elevated) 0%, var(--navy) 50%, var(--navy-deep) 100%);
+  overflow: hidden;
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--gold-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gold-faint) 1px, transparent 1px),
+    linear-gradient(rgba(201, 160, 99, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 160, 99, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, transparent 90%);
+  mask-image: radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, transparent 90%);
+  opacity: 0.85;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  mix-blend-mode: screen;
+  filter: brightness(1.05) contrast(1.05);
+}
+
+.hero__right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, rgba(5, 13, 23, 0.55) 100%),
+    linear-gradient(90deg, rgba(10,25,41,0.4) 0%, transparent 18%, transparent 100%);
+}
+
+/* Mobile — stack vertically */
+@media (max-width: 980px) {
+  html, body { overflow-y: auto; }
+  body { overflow-x: hidden; }
+  .hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+  }
+  .hero__left {
+    padding: 40px 24px 32px;
+    background: var(--navy);
+    order: 1;
+  }
+  .hero__right {
+    height: 60vh;
+    min-height: 420px;
+    order: 2;
+  }
+  .hero__foot { margin-top: 24px; }
+}
+
+@media (max-width: 480px) {
+  .hero__left { padding: 32px 22px 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+  <div class="hero__left">
+    <div class="hero__top">
+      <span class="hero__date">Erscheint 19.05.2026</span>
+    </div>
+
+    <div class="hero__main">
+      <div class="hero__eyebrow">Ein Vorgeschmack auf</div>
+      <h1 class="hero__title">Wörter wie<br>Baupläne</h1>
+      <span class="hero__rule"></span>
+      <div class="hero__sub">Die 43 Baumsysteme deiner Sprache</div>
+      <p class="hero__tagline">
+        Vier Wörter,<br>
+        <em>wie du sie noch nie gehört hast.</em>
+      </p>
+      <div class="hero__cta-row">
+
+        <form
+          class="signup"
+          id="signupForm"
+          action="https://assets.mailerlite.com/jsonp/1432497/forms/186802005623178985/subscribe"
+          method="POST"
+          novalidate
+        >
+          <!-- MailerLite required hidden fields -->
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+
+          <div class="signup__field">
+            <span class="signup__field-glow signup__field-glow--halo" aria-hidden="true"></span>
+            <span class="signup__field-glow signup__field-glow--rim" aria-hidden="true"></span>
+            <input
+              type="email"
+              name="fields[email]"
+              id="signupEmail"
+              class="signup__input"
+              required
+              autocomplete="email"
+              placeholder="deine@email.de"
+              aria-label="E-Mail-Adresse"
+            >
+          </div>
+
+          <label class="signup__consent">
+            <input type="checkbox" id="signupConsent" class="signup__checkbox" required>
+            <span class="signup__consent-text">
+              Ja, ich möchte das PDF erhalten und stimme zu, dass Joobin Khavand mir gelegentlich E-Mails rund um das Buch und sein Wirken schickt. Ich kann mich jederzeit abmelden.
+            </span>
+          </label>
+
+          <button type="submit" class="btn signup__button">
+            Schick mir das PDF
+          </button>
+
+          <span class="hero__caption">18 Seiten · sofort per E-Mail</span>
+
+          <div class="signup__status" id="signupStatus" role="status" aria-live="polite"></div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="hero__foot">
+      <nav class="hero__foot-links" aria-label="Rechtliches">
+        <a href="https://www.deinlebendeinprojekt.de/agb" target="_blank" rel="noopener">AGB</a>
+        <span class="hero__foot-sep" aria-hidden="true">·</span>
+        <a href="https://www.deinlebendeinprojekt.de/impressum-datenschutz" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a>
+        <span class="hero__foot-sep" aria-hidden="true">·</span>
+        <a href="https://www.deinlebendeinprojekt.de" target="_blank" rel="noopener">www.deinlebendeinprojekt.de</a>
+      </nav>
+      <span class="hero__foot-copy">© 2026 Joobin Khavand · Alle Rechte vorbehalten</span>
+    </div>
+  </div>
+
+  <div class="hero__right">
+    <div class="hero__grid"></div>
+    <video
+      class="hero__video"
+      src="Baumvideolanding.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      aria-label="Rotierender 3D-Baum aus den Wörtern des Buches"
+    ></video>
+  </div>
+
+</section>
+
+<!-- Confirmation modal — cream-white panel over dark navy overlay -->
+<div class="modal" id="signupModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal__overlay" data-modal-close></div>
+
+  <div class="modal__panel" role="document">
+    <button type="button" class="modal__close" aria-label="Schließen" data-modal-close>
+      <svg viewBox="0 0 14 14" aria-hidden="true">
+        <path d="M2 2 L12 12 M12 2 L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+    </button>
+
+    <span class="modal__accent" aria-hidden="true"></span>
+
+    <h2 class="modal__title" id="modalTitle">Schau in dein Postfach.</h2>
+
+    <div class="modal__body">
+      <p>Du findest dort eine kurze Bestätigungsmail von mir. Klick auf den Link, und das PDF kommt sofort zu dir.</p>
+      <p>Falls du nichts findest, schau auch in deinen Spam-Ordner. Manchmal landet die erste Mail dort.</p>
+      <p class="modal__signoff">Bis gleich.<br><em>Joobin</em></p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   Signup → MailerLite → Modal
+   - Validiert E-Mail + DSGVO-Checkbox client-seitig
+   - POSTet per fetch (no-cors) an MailerLite-Endpoint
+   - Bei Erfolg: Modal öffnet, Form bleibt sichtbar im Hintergrund
+   - Modal schließbar via X, Overlay-Click und ESC
+   - Body wird gelockt während Modal offen ist
+   - Basic Focus-Trap im Modal
+   ============================================================ */
+(function() {
+  'use strict';
+
+  const form    = document.getElementById('signupForm');
+  const status  = document.getElementById('signupStatus');
+  const button  = form.querySelector('button[type="submit"]');
+  const email   = document.getElementById('signupEmail');
+  const consent = document.getElementById('signupConsent');
+  const modal   = document.getElementById('signupModal');
+  const closeBtn = modal.querySelector('.modal__close');
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let lastFocused = null;
+
+  function setStatus(msg, type) {
+    status.textContent = msg || '';
+    status.className = 'signup__status' + (type ? ' signup__status--' + type : '');
+  }
+
+  // ---------- Modal control ----------
+  function openModal() {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    // Trigger transition on next frame so the initial state renders first
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        modal.classList.add('is-open');
+      });
+    });
+    // Move focus into the modal for accessibility
+    setTimeout(function() { closeBtn.focus(); }, 80);
+
+    document.addEventListener('keydown', onKeyDown);
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+    document.removeEventListener('keydown', onKeyDown);
+    // Wait for the fade-out before fully hiding
+    setTimeout(function() {
+      modal.hidden = true;
+      if (lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+    }, 400);
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+    // Simple focus trap — keep Tab cycling within the close button (only focusable in modal)
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      closeBtn.focus();
+    }
+  }
+
+  // X-Button + Overlay-Click — alle Elemente mit data-modal-close
+  modal.querySelectorAll('[data-modal-close]').forEach(function(el) {
+    el.addEventListener('click', closeModal);
+  });
+
+  // ---------- Form submit ----------
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    setStatus('');
+
+    const value = email.value.trim();
+    if (!value || !EMAIL_RE.test(value)) {
+      setStatus('Bitte eine gültige E-Mail-Adresse eingeben.', 'error');
+      email.focus();
+      return;
+    }
+    if (!consent.checked) {
+      setStatus('Bitte stimme der Zusendung zu, damit ich dir das PDF schicken kann.', 'error');
+      consent.focus();
+      return;
+    }
+
+    button.disabled = true;
+    setStatus('Sende ...');
+
+    try {
+      const data = new FormData(form);
+      // Consent checkbox is local DSGVO gating — kein MailerLite-Feld
+      data.delete('consent');
+
+      await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors'
+      });
+
+      // Form leeren und Modal öffnen
+      form.reset();
+      setStatus('');
+      button.disabled = false;
+      openModal();
+    } catch (err) {
+      console.error('Signup error:', err);
+      setStatus('Etwas ist schiefgelaufen. Versuche es bitte gleich noch einmal.', 'error');
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
