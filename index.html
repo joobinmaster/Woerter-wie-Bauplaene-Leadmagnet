@@ -609,11 +609,13 @@ body.modal-open { overflow: hidden; }
     order: 1;
   }
   .hero__right {
-    /* Square aspect matches the 1440×1440 video → tree fits without crop */
     height: auto;
     aspect-ratio: 1 / 1;
     width: 100%;
     order: 2;
+  }
+  .hero__video {
+    object-fit: contain;
   }
   .hero__foot { margin-top: 24px; }
 }
