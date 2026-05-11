@@ -31,7 +31,7 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 100%; height: 100%; }
-html { -webkit-text-size-adjust: 100%; overflow: hidden; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font-ui);
   font-size: 16px;
@@ -39,7 +39,6 @@ body {
   color: var(--text-primary);
   background: var(--navy);
   -webkit-font-smoothing: antialiased;
-  overflow: hidden;
 }
 
 ::selection { background: var(--gold-faint); color: var(--text-primary); }
@@ -51,7 +50,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   isolation: isolate;
   background: var(--navy);
@@ -610,8 +609,10 @@ body.modal-open { overflow: hidden; }
     order: 1;
   }
   .hero__right {
-    height: 60vh;
-    min-height: 420px;
+    /* Square aspect matches the 1440×1440 video → tree fits without crop */
+    height: auto;
+    aspect-ratio: 1 / 1;
+    width: 100%;
     order: 2;
   }
   .hero__foot { margin-top: 24px; }
@@ -735,7 +736,7 @@ body.modal-open { overflow: hidden; }
     <h2 class="modal__title" id="modalTitle">Schau in dein Postfach.</h2>
 
     <div class="modal__body">
-      <p>Du findest dort eine kurze Bestätigungsmail von mir. Klick auf den Link, und das PDF kommt sofort zu dir.</p>
+      <p>Du findest dort gleich eine kurze Bestätigungsmail. Klick einmal auf den Confirm-Button darin — danach kommt dein PDF sofort zu dir.</p>
       <p>Falls du nichts findest, schau auch in deinen Spam-Ordner. Manchmal landet die erste Mail dort.</p>
       <p class="modal__signoff">Bis gleich.<br><em>Joobin</em></p>
     </div>
